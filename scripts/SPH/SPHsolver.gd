@@ -1,15 +1,13 @@
 extends Reference
 
 var Constants = preload('res://scripts/Constants.gd')
+var Kernel = preload('res://scripts/SPH/Kernel.gd').new()
 var Particle = preload('res://scripts/SPH/Particle.gd')
 var grid = preload('res://scripts/Grid.gd').new()
 var neighborhoods = []
 
 var number_particles
 var particles = []
-
-var KernelObject = preload('res://scripts/SPH/Kernel.gd')
-var Kernel = KernelObject.new()
 
 func _init():
 	var _particles = Vector2(Constants.NUMBER_PARTICLES/2, Constants.NUMBER_PARTICLES)
