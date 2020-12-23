@@ -2,7 +2,7 @@ extends Node
 
 var Constants = preload('res://scripts/Constants.gd')
 
-var SPH = preload('res://scripts/SPH/SPHsolver.gd').new()
+var SPH = preload('res://scripts/SPH/Solver.gd').new()
 
 var default_scale = Vector2(1,1)/64.0 * Constants.KERNEL_RANGE * Constants.SCALE
 var display_mode = Constants.DRAW_MODE_BLOB
