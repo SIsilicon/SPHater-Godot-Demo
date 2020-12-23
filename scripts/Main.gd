@@ -1,8 +1,8 @@
 extends Node
 
-var Constants = preload('res://Constants.gd')
+var Constants = preload('res://scripts/Constants.gd')
 
-var SPH = preload('res://SPHsolver.gd').new()
+var SPH = preload('res://scripts/SPHsolver.gd').new()
 
 var default_scale = Vector2(1,1)/64.0 * Constants.KERNEL_RANGE * Constants.SCALE
 var display_mode = Constants.DRAW_MODE_BLOB
@@ -72,19 +72,19 @@ func handle_input():
 		display_mode = Constants.DRAW_MODE_BLOB
 		particle_mat.blend_mode = particle_mat.BLEND_MODE_ADD
 		$FluidDisplay.material.set_shader_param('blobby', true)
-		$FluidDisplay.material.set_shader_param('color_ramp', preload('demo/gui/water_preset.tres'))
+		$FluidDisplay.material.set_shader_param('color_ramp', preload('res://demo/gui/water_preset.tres'))
 		$Panel.swap(Constants.DRAW_MODE_BLOB)
 	elif Input.is_action_just_released('pressure'):
 		display_mode = Constants.DRAW_MODE_PRESSURE
 		particle_mat.blend_mode = particle_mat.BLEND_MODE_MIX
 		$FluidDisplay.material.set_shader_param('blobby', false)
-		$FluidDisplay.material.set_shader_param('color_ramp', preload('demo/gui/vis_pressure.tres'))
+		$FluidDisplay.material.set_shader_param('color_ramp', preload('res://demo/gui/vis_pressure.tres'))
 		$Panel.swap(Constants.DRAW_MODE_PRESSURE)
 	elif Input.is_action_just_released('viscosity'):
 		display_mode = Constants.DRAW_MODE_VISCOSITY
 		particle_mat.blend_mode = particle_mat.BLEND_MODE_MIX
 		$FluidDisplay.material.set_shader_param('blobby', false)
-		$FluidDisplay.material.set_shader_param('color_ramp', preload('demo/gui/vis_viscosity.tres'))
+		$FluidDisplay.material.set_shader_param('color_ramp', preload('res://demo/gui/vis_viscosity.tres'))
 		$Panel.swap(Constants.DRAW_MODE_VISCOSITY)
 
 func update_fluid(delta):

@@ -1,6 +1,6 @@
 extends Reference
 
-var Constants = preload('res://Constants.gd')
+var Constants = preload('res://scripts/Constants.gd')
 
 var position
 var velocity = Vector2()

@@ -1,9 +1,9 @@
 extends Reference
 
-var Constants = preload('res://Constants.gd')
-var Particle = preload('res://Particle.gd')
+var Constants = preload('res://scripts/Constants.gd')
+var Particle = preload('res://scripts/Particle.gd')
 
-var grid = preload('res://Grid.gd').new()
+var grid = preload('res://scripts/Grid.gd').new()
 var neighborhoods = []
 
 var number_particles
