@@ -1,6 +1,6 @@
 extends Panel
 
-var Constants = preload('Constants.gd')
+var Constants = preload('scripts/Constants.gd')
 
 var current_draw_mode = Constants.DRAW_MODE_BLOB
 
