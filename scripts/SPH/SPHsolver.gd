@@ -1,13 +1,15 @@
 extends Reference
 
 var Constants = preload('res://scripts/Constants.gd')
-var Particle = preload('res://scripts/Particle.gd')
-
+var Particle = preload('res://scripts/SPH/Particle.gd')
 var grid = preload('res://scripts/Grid.gd').new()
 var neighborhoods = []
 
 var number_particles
 var particles = []
+
+var KernelObject = preload('res://scripts/SPH/Kernel.gd')
+var Kernel = KernelObject.new()
 
 func _init():
 	var _particles = Vector2(Constants.NUMBER_PARTICLES/2, Constants.NUMBER_PARTICLES)
@@ -62,26 +64,7 @@ func update(delta, draw_mode=Constants.DRAW_MODE_BLOB):
 	#print('everything else takes ' + str(OS.get_ticks_msec() - m) + ' ms.')
 	#m = OS.get_ticks_msec()
 
-func kernel(x=Vector2()):
-	var r2 = x.length_squared()
-	var h2 = Constants.KERNEL_RANGE * Constants.KERNEL_RANGE
-	
-	if r2 < 0 || r2 > h2: return 0.0
-	
-	return Constants.KERNEL_CONST * pow(h2 - r2, 3)
 
-func grad_kernel(x=Vector2()):
-	var r = x.length()
-	if r == 0.0: return Vector2()
-	
-	var t2 = x / r;
-	var t3 = pow(Constants.KERNEL_RANGE - r, 2)
-	
-	return -Constants.GRAD_KERNEL_CONST * t2 * t3
-
-func laplace_kernel(x=Vector2()):
-	var r = x.length()
-	return Constants.GRAD_KERNEL_CONST * (Constants.KERNEL_RANGE-r)
 
 func find_neighborhoods():
 	neighborhoods = []
@@ -109,7 +92,7 @@ func calculate_density():
 		for j in neighbors:
 			
 			var x = particles[i].position - particles[j].position
-			densitySum += particles[j].mass * kernel(x)
+			densitySum += particles[j].mass * Kernel.kernel(x)
 		
 		particles[i].density = densitySum
 
@@ -128,8 +111,8 @@ func calculate_force_density(draw_mode):
 			
 			var x = particles[i].position - particles[j].position
 			
-			f_pressure += particles[j].mass * (particles[i].pressure + particles[j].pressure) / (2.0 * particles[j].density) * grad_kernel(x)
-			f_viscosity += particles[j].mass * (particles[j].velocity - particles[i].velocity) / particles[j].density * laplace_kernel(x)
+			f_pressure += particles[j].mass * (particles[i].pressure + particles[j].pressure) / (2.0 * particles[j].density) * Kernel.grad_kernel(x)
+			f_viscosity += particles[j].mass * (particles[j].velocity - particles[i].velocity) / particles[j].density * Kernel.laplace_kernel(x)
 		
 		f_gravity = particles[i].density * Vector2(0, Constants.GRAVITY)
 		
