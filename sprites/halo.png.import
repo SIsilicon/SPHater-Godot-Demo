@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/halo.png-ea4bc798a256110dec978539aea7cfca.stex"
+path="res://.import/halo.png-e6dcf3ddc053665e1a044dd2aee6f83e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://halo.png"
-dest_files=[ "res://.import/halo.png-ea4bc798a256110dec978539aea7cfca.stex" ]
+source_file="res://sprites/halo.png"
+dest_files=[ "res://.import/halo.png-e6dcf3ddc053665e1a044dd2aee6f83e.stex" ]
 
 [params]
 

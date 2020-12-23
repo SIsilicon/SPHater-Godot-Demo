@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Water2D"
 run/main_scene="res://Water.tscn"
-config/icon="res://icon.png"
+config/icon="res://sprites/icon.png"
 
 [debug]
 

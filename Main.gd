@@ -19,7 +19,7 @@ func _ready():
 	
 	for p in SPH.particles:
 		var waterdraw = Sprite.new()
-		waterdraw.texture = preload("res://halo.png")
+		waterdraw.texture = preload("res://sprites/halo.png")
 		waterdraw.material = particle_mat
 		
 		waterdraw.position = p.position * Constants.SCALE
