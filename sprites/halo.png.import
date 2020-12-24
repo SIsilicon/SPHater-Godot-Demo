@@ -2,21 +2,22 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/halo.png-ea4bc798a256110dec978539aea7cfca.stex"
+path="res://.import/halo.png-e6dcf3ddc053665e1a044dd2aee6f83e.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://halo.png"
-source_md5="3fcdc91f3d4617f2c5090754b8b4f891"
-
-dest_files=[ "res://.import/halo.png-ea4bc798a256110dec978539aea7cfca.stex" ]
-dest_md5="884b5871913455c5b21963c07833f6cf"
+source_file="res://sprites/halo.png"
+dest_files=[ "res://.import/halo.png-e6dcf3ddc053665e1a044dd2aee6f83e.stex" ]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

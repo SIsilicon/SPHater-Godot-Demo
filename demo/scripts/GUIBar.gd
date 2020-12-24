@@ -1,6 +1,6 @@
 extends Panel
 
-var Constants = preload('Constants.gd')
+var Constants = preload('res://scripts/Constants.gd')
 
 var current_draw_mode = Constants.DRAW_MODE_BLOB
 
@@ -23,12 +23,12 @@ func swap(draw_mode=Constants.DRAW_MODE_BLOB):
 func switch_visual(vis):
 	match vis:
 		Constants.DRAW_MODE_PRESSURE:
-			$Bar.texture = preload('vis_pressure.tres')
+			$Bar.texture = preload('res://demo/gui/vis_pressure.tres')
 			$BarType.text = 'Pressure'
 			$MinVal.text = '0'
 			$MaxVal.text = '100'
 		Constants.DRAW_MODE_VISCOSITY:
-			$Bar.texture = preload('vis_viscosity.tres')
+			$Bar.texture = preload('res://demo/gui/vis_viscosity.tres')
 			$MinVal.text = '0'
 			$MaxVal.text = '500'
 			$BarType.text = 'Viscosity'
