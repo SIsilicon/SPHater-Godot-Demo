@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var Constants = preload('res://scripts/Constants.gd')
 # var SPH = preload('res://scripts/SPH/Solver.gd').new()
@@ -9,11 +9,10 @@ var particle_mat = CanvasItemMaterial.new()
 var first_few_frames = true
 var paused = false
 
-onready var view = get_node('../View')
-onready var label_paused = get_node('../Paused')
-onready var tween = get_node('../Tween')
+onready var label_paused = get_node('../../Paused')
+onready var tween = get_node('../../Tween')
 onready var fluid_display = get_node('../FluidDisplay')
-onready var panel = get_node('../Panel')
+onready var panel = get_node('../../Panel')
 onready var parent = get_parent()
 
 func _ready():	
@@ -24,17 +23,19 @@ func _physics_process(delta):
 	handle_input()
 
 func handle_input():
-	$mouse.position = view.get_mouse_position()
+	#$mouse.position = view.get_mouse_position()
 	if Input.is_action_just_pressed('attract'): $mouse.modulate = Color(1,1,1,1)
 	if Input.is_action_pressed('attract'):
-		var mouse_pos = view.get_mouse_position() / Constants.SCALE
-		parent.SPH.attraction_force(mouse_pos, -8)
+		pass
+		#var mouse_pos = view.get_mouse_position() / Constants.SCALE
+		#parent.SPH.attraction_force(mouse_pos, -8)
 	if Input.is_action_just_released('attract'): $mouse.modulate = Color(1,1,1,0)
 	
 	if Input.is_action_just_released('pause'):
-		parent.paused = !parent.paused
+		pass
+		#parent.paused = !parent.paused
 		#paused = !paused
-		label_paused.visible = parent.paused
+		#label_paused.visible = parent.paused
 	
 	if Input.is_action_just_released('reset'):
 		#SPH._init()
