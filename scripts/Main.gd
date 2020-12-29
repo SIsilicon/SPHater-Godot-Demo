@@ -21,10 +21,11 @@ func _ready():
 	render_service.render(SPH.particles)
 
 
-func _physics_process(delta):	
+func _physics_process(delta):
+	if paused: return
+		
+	update_fluid(delta)
 	var space_state = get_world_2d().direct_space_state
-	
-	if !paused: update_fluid(delta)
 	
 	for particle_index in range(SPH.particles.size()):
 		var draw_point = liquid_view.get_child(particle_index)
@@ -46,10 +47,9 @@ func _physics_process(delta):
 		# 	[], 
 		# 	0x7FFFFFFF, 
 		# 	true, 
-		# 	true)
-	
+		# 	true)	
 		
-		# if not intersections.empty():			
+		# if not intersections.empty():
 		# 	# se a parede está a direita
 		# 	if SPH.particles[p].velocity.x > 0:
 		# 		#SPH.particles[p].position.x -= 1
