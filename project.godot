@@ -56,6 +56,11 @@ reset={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Water"
+2d_physics/layer_2="Collider"
+
 [physics]
 
 2d/thread_model=2
