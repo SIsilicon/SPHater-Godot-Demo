@@ -3,6 +3,7 @@ extends Node2D
 const RenderService = preload('res://scripts/renderer/RenderService.gd')
 var Constants = preload('res://scripts/Constants.gd')
 var SPH = preload('res://scripts/SPH/Solver.gd').new()
+const Collision = preload('res://scripts/collision/Collision.gd')
 
 var default_scale = Vector2(1,1)/64.0 * Constants.KERNEL_RANGE * Constants.SCALE
 var display_mode = Constants.DRAW_MODE_BLOB
@@ -10,6 +11,7 @@ var particle_mat = CanvasItemMaterial.new()
 
 var first_few_frames = true
 var paused = false
+var collision
 
 onready var liquid_view = $LiquidView
 onready var view = get_node('../View')
@@ -19,7 +21,7 @@ var render_service
 func _ready():	
 	render_service = RenderService.new(liquid_view)
 	render_service.render(SPH.particles)
-
+	collision = Collision.new()
 
 func _physics_process(delta):
 	if paused: return
@@ -40,32 +42,7 @@ func _physics_process(delta):
 		# 	particle_index, 
 		# 	SPH.particles[particle_index].velocity, 
 		# 	draw_point)		
-		
-		# var intersections = space_state.intersect_point(
-		# 	draw_point.position, 
-		# 	32, 
-		# 	[], 
-		# 	0x7FFFFFFF, 
-		# 	true, 
-		# 	true)	
-		
-		# if not intersections.empty():
-		# 	# se a parede está a direita
-		# 	if SPH.particles[p].velocity.x > 0:
-		# 		#SPH.particles[p].position.x -= 1
-		# 		SPH.particles[p].velocity.x *= -0.1
-
-		# 	# se a parede está a esquerda
-		# 	if SPH.particles[p].velocity.x < 0:
-		# 		SPH.particles[p].velocity.x *= -0.1
-
-		# 	# se a parede está acima
-		# 	if SPH.particles[p].velocity.y > 0:
-		# 		SPH.particles[p].velocity.y *= -0.1
-				
-		# 	# se a parede está abaixo
-		# 	if SPH.particles[p].velocity.y > 0:
-		# 		SPH.particles[p].velocity.y *= -0.1
+		collision.calculate(draw_point, SPH.particles[particle_index], space_state)
 
 
 func update_fluid(delta):
