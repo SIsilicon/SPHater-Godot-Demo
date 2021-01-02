@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/Terrain (16x16).png-a766400726527b7f649f17dea93b1925.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/icon.png"
+source_file="res://demo/Terrain (16x16).png"
+dest_files=[ "res://.import/Terrain (16x16).png-a766400726527b7f649f17dea93b1925.stex" ]
+
 [params]
 
 compress/mode=0

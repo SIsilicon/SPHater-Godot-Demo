@@ -3,7 +3,7 @@ extends Reference
 var Constants = preload('res://scripts/Constants.gd')
 var Kernel = preload('res://scripts/SPH/Kernel.gd').new()
 var Particle = preload('res://scripts/SPH/Particle.gd')
-var grid = preload('res://scripts/Grid.gd').new()
+var grid = preload('res://scripts/SPH/Grid.gd').new()
 var neighborhoods = []
 
 var number_particles
@@ -129,7 +129,7 @@ func integration_step(delta):
 
 func collision_handling():
 	for i in range(number_particles):
-		
+
 		if particles[i].position.x < 0:
 			particles[i].position.x = 0
 			particles[i].velocity.x *= -0.1
