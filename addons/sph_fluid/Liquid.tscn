@@ -1,7 +1,5 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://demo/scripts/GUIBar.gd" type="Script" id=1]
-[ext_resource path="res://demo/gui/vis_pressure.tres" type="Texture" id=2]
 [ext_resource path="res://demo/gui/water_preset.tres" type="Texture" id=3]
 [ext_resource path="res://addons/sph_fluid/scripts/Main.gd" type="Script" id=4]
 [ext_resource path="res://addons/sph_fluid/scripts/Input.gd" type="Script" id=5]
@@ -51,61 +49,6 @@ shader = SubResource( 4 )
 
 [node name="Node" type="Node"]
 
-[node name="Panel" type="Panel" parent="."]
-margin_left = -100.0
-margin_right = -9.0
-margin_bottom = 156.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Bar" type="TextureRect" parent="Panel"]
-margin_left = 7.0
-margin_top = 143.0
-margin_right = 122.0
-margin_bottom = 169.0
-rect_rotation = -90.0
-texture = ExtResource( 2 )
-expand = true
-
-[node name="MinVal" type="Label" parent="Panel"]
-margin_left = 36.0
-margin_top = 129.0
-margin_right = 76.0
-margin_bottom = 143.0
-text = "0.000"
-
-[node name="MaxVal" type="Label" parent="Panel"]
-margin_left = 36.0
-margin_top = 28.0
-margin_right = 76.0
-margin_bottom = 42.0
-text = "100"
-
-[node name="BarType" type="Label" parent="Panel"]
-margin_left = 16.0
-margin_top = 5.0
-margin_right = 78.0
-margin_bottom = 19.0
-text = "Pressure"
-valign = 2
-
-[node name="Tween" type="Tween" parent="Panel"]
-
-[node name="Paused" type="Label" parent="."]
-margin_left = 940.0
-margin_right = 991.0
-margin_bottom = 14.0
-text = "Paused"
-align = 2
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tween" type="Tween" parent="."]
-
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource( 4 )
 
@@ -115,7 +58,6 @@ texture = SubResource( 3 )
 centered = false
 
 [node name="Input" type="Node2D" parent="Node2D"]
-visible = false
 script = ExtResource( 5 )
 
 [node name="mouse" type="Sprite" parent="Node2D/Input"]
