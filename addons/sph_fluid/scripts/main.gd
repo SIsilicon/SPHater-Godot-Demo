@@ -2,7 +2,7 @@ extends Node2D
 
 const RenderService = preload('res://addons/sph_fluid/scripts/renderer/RenderService.gd')
 const Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
-const SPH_Solver = preload('res://addons/sph_fluid/scripts/SPH/Solver.gd')
+const SPH_Solver = preload('res://addons/sph_fluid/scripts/SPH/solver.gd')
 const Collision = preload('res://addons/sph_fluid/scripts/collision/Collision.gd')
 
 var _collision
