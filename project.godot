@@ -23,6 +23,10 @@ config/icon="res://sprites/icon.png"
 
 settings/fps/force_fps=60
 
+[editor_plugins]
+
+enabled=PoolStringArray( "sph_fluid" )
+
 [input]
 
 attract={
