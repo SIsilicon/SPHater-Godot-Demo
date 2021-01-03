@@ -1,7 +1,7 @@
 extends Reference
 
 var Particle = preload('res://addons/sph_fluid/scripts/SPH/particle.gd')
-var Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
+var Constants = preload('res://addons/sph_fluid/scripts/constants.gd')
 
 var default_scale = Vector2(1,1)/64.0 * Constants.KERNEL_RANGE * Constants.SCALE
 var water_texture

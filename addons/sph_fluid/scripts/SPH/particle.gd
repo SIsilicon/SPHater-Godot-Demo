@@ -1,6 +1,6 @@
 extends Reference
 
-var Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
+var Constants = preload('res://addons/sph_fluid/scripts/constants.gd')
 
 var position = Vector2()
 var velocity = Vector2()
@@ -22,5 +22,5 @@ func get_color(draw_mode):
 				color = pressure / 100.0
 			Constants.DRAW_MODE_VISCOSITY:
 				color = viscosity / 500.0
-	
+
 	return Color(color, color, color)
