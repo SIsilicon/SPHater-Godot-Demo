@@ -1,7 +1,7 @@
 extends Reference
 
-var Particle = preload('res://scripts/SPH/Particle.gd')
-var Constants = preload('res://scripts/Constants.gd')
+var Particle = preload('res://addons/sph_fluid/scripts/SPH/Particle.gd')
+var Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
 
 var default_scale = Vector2(1,1)/64.0 * Constants.KERNEL_RANGE * Constants.SCALE
 var water_texture
@@ -12,7 +12,7 @@ var liquid_view
 var i_reset = 1.0
 
 func _init(liquid_viewZ):
-	water_texture = preload("res://sprites/halo.png")
+	water_texture = preload("res://addons/sph_fluid/sprites/halo.png")
 	particle_mat = CanvasItemMaterial.new()
 	particle_mat.blend_mode = particle_mat.BLEND_MODE_ADD
 	

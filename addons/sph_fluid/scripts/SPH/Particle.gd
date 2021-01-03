@@ -1,6 +1,6 @@
 extends Reference
 
-var Constants = preload('res://scripts/Constants.gd')
+var Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
 
 var position = Vector2()
 var velocity = Vector2()

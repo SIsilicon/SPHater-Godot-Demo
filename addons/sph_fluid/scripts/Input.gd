@@ -1,6 +1,6 @@
 extends Node
 
-var Constants = preload('res://scripts/Constants.gd')
+var Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
 # var SPH = preload('res://scripts/SPH/Solver.gd').new()
 
 var i_reset = 1.0

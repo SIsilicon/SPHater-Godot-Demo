@@ -1,9 +1,9 @@
 extends Node2D
 
-const RenderService = preload('res://scripts/renderer/RenderService.gd')
-var Constants = preload('res://scripts/Constants.gd')
-var SPH = preload('res://scripts/SPH/Solver.gd').new()
-const Collision = preload('res://scripts/collision/Collision.gd')
+const RenderService = preload('res://addons/sph_fluid/scripts/renderer/RenderService.gd')
+var Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
+var SPH = preload('res://addons/sph_fluid/scripts/SPH/Solver.gd').new()
+const Collision = preload('res://addons/sph_fluid/scripts/collision/Collision.gd')
 
 var default_scale = Vector2(1,1)/64.0 * Constants.KERNEL_RANGE * Constants.SCALE
 var display_mode = Constants.DRAW_MODE_BLOB

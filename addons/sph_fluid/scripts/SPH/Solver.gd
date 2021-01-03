@@ -1,9 +1,9 @@
 extends Reference
 
-var Constants = preload('res://scripts/Constants.gd')
-var Kernel = preload('res://scripts/SPH/Kernel.gd').new()
-var Particle = preload('res://scripts/SPH/Particle.gd')
-var grid = preload('res://scripts/SPH/Grid.gd').new()
+var Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
+var Kernel = preload('res://addons/sph_fluid/scripts/SPH/Kernel.gd').new()
+var Particle = preload('res://addons/sph_fluid/scripts/SPH/Particle.gd')
+var grid = preload('res://addons/sph_fluid/scripts/SPH/Grid.gd').new()
 var neighborhoods = []
 
 var number_particles

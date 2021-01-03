@@ -1,6 +1,6 @@
 extends Panel
 
-var Constants = preload('res://scripts/Constants.gd')
+var Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
 
 var current_draw_mode = Constants.DRAW_MODE_BLOB
 

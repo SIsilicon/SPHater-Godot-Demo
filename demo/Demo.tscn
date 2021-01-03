@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Liquid.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/sph_fluid/Liquid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://demo/gui/lava_preset.tres" type="Texture" id=2]
 [ext_resource path="res://demo/gui/vis_viscosity.tres" type="Texture" id=3]
 [ext_resource path="res://demo/tilemaps/Base Floor Tileset.tres" type="TileSet" id=4]
