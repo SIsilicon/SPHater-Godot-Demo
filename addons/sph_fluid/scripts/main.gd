@@ -1,8 +1,8 @@
 extends Node2D
 
 const RenderService = preload('res://addons/sph_fluid/scripts/renderer/RenderService.gd')
-var Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
-var SPH = preload('res://addons/sph_fluid/scripts/SPH/Solver.gd').new()
+const Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
+const SPH_Solver = preload('res://addons/sph_fluid/scripts/SPH/Solver.gd')
 const Collision = preload('res://addons/sph_fluid/scripts/collision/Collision.gd')
 
 var default_scale = Vector2(1,1)/64.0 * Constants.KERNEL_RANGE * Constants.SCALE
@@ -12,6 +12,8 @@ var particle_mat = CanvasItemMaterial.new()
 var first_few_frames = true
 var paused = false
 var collision
+
+var SPH = SPH_Solver.new()
 
 onready var liquid_view = $LiquidView
 onready var view = get_node('../View')
