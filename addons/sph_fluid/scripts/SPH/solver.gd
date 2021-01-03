@@ -14,7 +14,6 @@ var particles = []
 
 func _init():
 	var _particles = Vector2(Constants.NUMBER_PARTICLES/2, Constants.NUMBER_PARTICLES)
-
 	number_particles = _particles.x * _particles.y
 
 	var width = Constants.WIDTH / 4.2
@@ -26,8 +25,6 @@ func _init():
 	var d = particle_rect.size / _particles
 	for i in range(_particles.x):
 		for j in range(_particles.y):
-
-			#var pos = Vector2(rect_pos.x, rect_pos.y) + Vector2(i,j)*d
 			var pos = Vector2(i,j)*d + Vector2(0, 0.25)
 			pos.x += rand_range(-0.001,0.001)
 			pos.y += rand_range(-0.001,0.001)
@@ -47,11 +44,7 @@ func attraction_force(position, strength):
 			particles[i].force += x * strength * particles[i].density
 
 func update(delta, draw_mode=Constants.DRAW_MODE_BLOB):
-	#var m = OS.get_ticks_msec()
-
 	_find_neighborhoods()
-	#print('find_neighborhoods takes ' + str(OS.get_ticks_msec() - m) + ' ms.')
-	#m = OS.get_ticks_msec()
 
 	calculate_density()
 	calculate_pressure()
@@ -62,9 +55,6 @@ func update(delta, draw_mode=Constants.DRAW_MODE_BLOB):
 
 	#breakpoint
 	_grid.update_structure(particles)
-
-	#print('everything else takes ' + str(OS.get_ticks_msec() - m) + ' ms.')
-	#m = OS.get_ticks_msec()
 
 
 
