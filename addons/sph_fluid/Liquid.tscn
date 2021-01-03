@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/sph_fluid/scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://demo/scripts/input.gd" type="Script" id=2]
 [ext_resource path="res://demo/gui/water_preset.tres" type="Texture" id=3]
-[ext_resource path="res://addons/sph_fluid/scripts/Input.gd" type="Script" id=5]
 [ext_resource path="res://addons/sph_fluid/sprites/halo.png" type="Texture" id=6]
 
 [sub_resource type="Shader" id=1]
@@ -58,7 +58,7 @@ texture = SubResource( 3 )
 centered = false
 
 [node name="Input" type="Node2D" parent="Node2D"]
-script = ExtResource( 5 )
+script = ExtResource( 2 )
 
 [node name="mouse" type="Sprite" parent="Node2D/Input"]
 modulate = Color( 1, 1, 1, 0 )
