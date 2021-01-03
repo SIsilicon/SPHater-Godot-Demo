@@ -3,7 +3,7 @@ extends Reference
 const Constants = preload('res://addons/sph_fluid/scripts/Constants.gd')
 const Kernel = preload('res://addons/sph_fluid/scripts/SPH/Kernel.gd')
 const Particle = preload('res://addons/sph_fluid/scripts/SPH/particle.gd')
-const Grid = preload('res://addons/sph_fluid/scripts/SPH/Grid.gd')
+const Grid = preload('res://addons/sph_fluid/scripts/SPH/grid.gd')
 
 var _kernel = Kernel.new()
 var _grid = Grid.new()
