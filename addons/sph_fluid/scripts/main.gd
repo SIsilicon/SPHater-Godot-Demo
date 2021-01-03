@@ -18,8 +18,8 @@ func _ready():
 
 	_render_service.render(_SPH.particles)	
 
-func _physics_process(delta):		
-	_update_fluid(delta)	
+func _physics_process(delta):
+	_update_fluid(delta)
 	var space_state = get_world_2d().direct_space_state
 	
 	for particle_index in range(_SPH.particles.size()):
@@ -27,7 +27,7 @@ func _physics_process(delta):
 		
 		_collision.calculate(draw_point, _SPH.particles[particle_index], space_state)
 		_render(draw_point, particle_index)
-		
+
 
 func _update_fluid(delta):
 	var delta_time = Constants.TIMESTEP if Engine.get_frames_drawn() <= 5 else delta
